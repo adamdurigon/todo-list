@@ -125,7 +125,7 @@ export function RegisterForm({ className }: AuthFormProps) {
       >
         <div className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="name">Nom d'utilisateur</Label>
+            <Label htmlFor="name">Nom d&apos;utilisateur</Label>
             <Input
               id="name"
               name="name"
