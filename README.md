@@ -37,3 +37,4 @@ Une application moderne de gestion de tâches avec authentification, construite 
 - Mots de passe hachés avec bcryptjs
 - Headers de sécurité configurés
 - Protection CSRF et XSS
+# todo-list
