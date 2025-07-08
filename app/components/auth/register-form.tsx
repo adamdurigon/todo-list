@@ -77,7 +77,22 @@ export function RegisterForm({ className }: AuthFormProps) {
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.message || "Une erreur est survenue");
+
+        // Gestion spécifique pour email existant
+        if (response.status === 409) {
+          setErrors({ email: "Cette adresse email est déjà utilisée" });
+          toast.error("Email déjà utilisé", {
+            description:
+              "Un compte existe déjà avec cette adresse email. Essayez de vous connecter.",
+            action: {
+              label: "Se connecter",
+              onClick: () => router.push("/login"),
+            },
+          });
+          return;
+        }
+
+        throw new Error(data.error || "Une erreur est survenue");
       }
 
       // Connexion automatique après l'inscription
@@ -110,7 +125,7 @@ export function RegisterForm({ className }: AuthFormProps) {
       >
         <div className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="name">Nom</Label>
+            <Label htmlFor="name">Nom d'utilisateur</Label>
             <Input
               id="name"
               name="name"
