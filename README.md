@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 My Todo - Application de Gestion de Tâches
 
-## Getting Started
+Une application moderne de gestion de tâches avec authentification, construite avec Next.js 15, TypeScript et shadcn/ui.
 
-First, run the development server:
+## ✨ Fonctionnalités
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🔐 **Authentification complète** : Inscription, connexion avec validation sécurisée
+- 📝 **Gestion des tâches** : Créer, modifier, supprimer et marquer comme terminées
+- 💾 **Stockage hybride** : Synchronisation cloud pour les utilisateurs connectés, localStorage pour les visiteurs
+- 📱 **Interface responsive** : Design adaptatif avec composants shadcn/ui
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Technologies Utilisées
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Frontend :** Next.js 15, TypeScript, Tailwind CSS, shadcn/ui.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Backend :** Next.js API Routes, Prisma, MongoDB, NextAuth.js, Zod
 
-## Learn More
+**Développement :** Jest + Testing Library, ESLint, bcryptjs
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Fonctionnement
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Pour les utilisateurs connectés
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Synchronisation des tâches en base de données
+- Persistance entre sessions
+- Authentification sécurisée
 
-## Deploy on Vercel
+### Pour les visiteurs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Stockage local des tâches
+- Fonctionnalités complètes sans compte
+- Possibilité de s'inscrire pour sauvegarder
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔒 Sécurité
+
+- Validation Zod côté client et serveur
+- Mots de passe hachés avec bcryptjs
+- Headers de sécurité configurés
+- Protection CSRF et XSS
